@@ -40,7 +40,7 @@ src/allpycurl.c: src/pycurl.h src/oscompat.c src/pycurl.c src/threadsupport.c
 	mv src/.tmp.allpycurl.c src/allpycurl.c
 
 build: src/allpycurl.c
-	$(PYTHON) setup.py build
+	$(PYTHON) setup.py build --curl-config=$(CURL_ROOT)/bin/curl-config
 
 do-test:
 	mkdir -p tests/tmp
